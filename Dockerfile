@@ -1,5 +1,5 @@
 ARG MAGENTO_APP_TAG=latest
-ARG GETRESPONSE_MODULE_TAG=1.2.7
+ARG GETRESPONSE_MODULE_TAG=1.2.6
 FROM docker.int.getresponse.com/integrations/magento/magento-app:$MAGENTO_APP_TAG
 WORKDIR /magento-app
 ENV COMPOSER_HOME /.composer
