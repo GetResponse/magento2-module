@@ -1,0 +1,24 @@
+variables:
+  MAGENTO_APP_TAG: $MAGENTO_APP_TAG
+
+include:
+  - project: 'getresponse/ci-templates'
+    file: '/templates/jobs/kubernetes-production_deploy:regular.yml'
+
+stages:
+  - build
+  - dump:db
+
+image:build:
+  stage: build
+  interruptible: true
+  variables:
+    # See: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/27693
+    FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY: 'true'
+    TAGS: "$CI_COMMIT_SHORT_SHA,$CI_COMMIT_REF_SLUG"
+  only:
+    - tags
+  tags:
+    - kubernetes-ci
+  script:
+    - image-builder.sh --cache-from latest --project "integrations/magento/magento-module" --tags "$CI_COMMIT_TAG",master --secret id=composer,src=$COMPOSER_AUTH_CLOUD_RO --build-arg MAGENTO_APP_TAG="MAGENTO_APP_TAG" --build-arg GETRESPONSE_MODULE_TAG="$CI_COMMIT_TAG"
