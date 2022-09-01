@@ -20,4 +20,4 @@ image:build:
   tags:
     - kubernetes-ci
   script:
-    - image-builder.sh --cache-from latest --project "integrations/magento/magento-module" --tags "$CI_COMMIT_TAG",master --secret id=composer,src=$COMPOSER_AUTH_CLOUD_RO --build-arg MAGENTO_APP_TAG="MAGENTO_APP_TAG" --build-arg GETRESPONSE_MODULE_TAG="$CI_COMMIT_TAG"
+    - image-builder.sh --cache-from latest --project "integrations/magento/magento-module" --tags "$CI_COMMIT_TAG",master --secret id=composer,src=$COMPOSER_AUTH_CLOUD_RO --args MAGENTO_APP_TAG="MAGENTO_APP_TAG" --args GETRESPONSE_MODULE_TAG="$CI_COMMIT_TAG"
