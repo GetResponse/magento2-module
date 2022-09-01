@@ -1,5 +1,5 @@
 variables:
-  MAGENTO_APP_TAG: $MAGENTO_APP_TAG
+  MAGENTO_APP_TAG: 2.4.4-4
 
 include:
   - project: 'getresponse/ci-templates'
@@ -7,7 +7,6 @@ include:
 
 stages:
   - build
-  - dump:db
 
 image:build:
   stage: build
