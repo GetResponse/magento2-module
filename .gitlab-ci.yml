@@ -15,8 +15,6 @@ image:build:
     # See: https://gitlab.com/gitlab-org/gitlab-runner/-/issues/27693
     FF_USE_LEGACY_KUBERNETES_EXECUTION_STRATEGY: 'true'
     TAGS: "$CI_COMMIT_SHORT_SHA,$CI_COMMIT_REF_SLUG"
-  only:
-    - tags
   tags:
     - kubernetes-ci
   script:
