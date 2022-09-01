@@ -1,4 +1,4 @@
-ARG MAGENTO_APP_TAG=latest
+ARG MAGENTO_APP_TAG=2.4.4-4
 ARG GETRESPONSE_MODULE_TAG=1.2.6
 FROM docker.int.getresponse.com/integrations/magento/magento-app:$MAGENTO_APP_TAG
 WORKDIR /magento-app
