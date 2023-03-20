@@ -5,7 +5,7 @@
   "version": "1.2.9-dev",
   "type": "metapackage",
   "require": {
-    "getresponse/magento2": "20.5.9-dev",
+    "getresponse/magento2": "20.5.9",
     "getresponse/share-code-plugin": "7.0.*"
   }
 }
