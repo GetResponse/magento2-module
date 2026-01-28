@@ -2,10 +2,9 @@
   "name": "getresponse/magento2-module",
   "description": "GetResponse Integration for Magento2",
   "license": "OSL-3.0",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "type": "metapackage",
   "require": {
-    "getresponse/magento2": "20.9.2",
-    "getresponse/share-code-plugin": "7.0.*"
+    "getresponse/magento2": "21.0.0"
   }
 }
